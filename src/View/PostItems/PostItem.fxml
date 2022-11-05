@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PostItems.PostItemController">
    <children>
       <Text layoutX="47.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Post an item" />
       <ImageView fitHeight="254.0" fitWidth="172.0" layoutX="47.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
@@ -13,11 +13,11 @@
             <Image url="@yehorlisnyi210400016.jpg" />
          </image>
       </ImageView>
-      <TextArea layoutX="247.0" layoutY="135.0" prefHeight="115.0" prefWidth="314.0" />
+      <TextArea fx:id="description" layoutX="247.0" layoutY="135.0" prefHeight="115.0" prefWidth="314.0" />
       <Text layoutX="247.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
       <Text layoutX="247.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
-      <TextField layoutX="247.0" layoutY="286.0" prefHeight="25.0" prefWidth="84.0" />
-      <Button layoutX="377.0" layoutY="324.0" mnemonicParsing="false" text="Upload" />
-      <Label layoutX="246.0" layoutY="73.0" text="Title of an item" />
+      <TextField fx:id="price" layoutX="247.0" layoutY="286.0" prefHeight="25.0" prefWidth="84.0" />
+      <Button layoutX="377.0" layoutY="324.0" mnemonicParsing="false" onAction="#upload" text="Upload" />
+      <Label fx:id="title" layoutX="246.0" layoutY="73.0" text="Title of an item" />
    </children>
 </Pane>
