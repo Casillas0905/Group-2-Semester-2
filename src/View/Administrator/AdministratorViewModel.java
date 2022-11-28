@@ -1,4 +1,4 @@
-package Core.Administrator;
+package View.Administrator;
 
 public class AdministratorViewModel
 {

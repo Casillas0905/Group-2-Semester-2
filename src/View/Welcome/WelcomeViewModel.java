@@ -1,4 +1,4 @@
-package Core.Welcome;
+package View.Welcome;
 
 public class WelcomeViewModel
 {

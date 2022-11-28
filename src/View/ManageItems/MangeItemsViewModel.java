@@ -1,4 +1,4 @@
-package Core.ManageItems;
+package View.ManageItems;
 
 public class MangeItemsViewModel
 {

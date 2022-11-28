@@ -1,4 +1,4 @@
-package Core.SeeReports;
+package View.SeeReports;
 
 public class SeeReportsViewModel
 {

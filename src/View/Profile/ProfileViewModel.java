@@ -1,4 +1,4 @@
-package Core.Profile;
+package View.Profile;
 
 public class ProfileViewModel
 {

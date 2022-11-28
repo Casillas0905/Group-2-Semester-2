@@ -1,4 +1,4 @@
-package Core.Register;
+package View.Register;
 
 public class RegisterViewModel
 {
