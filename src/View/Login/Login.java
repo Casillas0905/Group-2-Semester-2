@@ -1,4 +1,4 @@
-package Core.Login;
+package View.Login;
 
 public class Login
 {

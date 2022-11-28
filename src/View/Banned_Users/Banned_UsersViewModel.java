@@ -1,4 +1,4 @@
-package Core.Banned_Users;
+package View.Banned_Users;
 
 public class Banned_UsersViewModel
 {

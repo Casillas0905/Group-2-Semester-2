@@ -1,4 +1,4 @@
-package Core.PostItems;
+package View.PostItems;
 
 public class PostItems
 {

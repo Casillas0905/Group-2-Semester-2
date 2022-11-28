@@ -1,4 +1,4 @@
-package Core.ViewOfAnItem;
+package View.ViewOfAnItem;
 
 public class ViewOfAnItemViewModel
 {
