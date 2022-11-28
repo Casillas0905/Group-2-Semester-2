@@ -1,4 +1,4 @@
-package Core.Why;
+package View.Why;
 
 public class WhyViewModel
 {
