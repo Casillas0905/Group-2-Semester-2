@@ -1,4 +1,4 @@
-package Core.Deleted_Commets;
+package View.Deleted_Comments;
 
 public class DeletedCommentsViewModel
 {

@@ -1,4 +1,4 @@
-package Core.EditInfo;
+package View.EditInfo;
 
 public class EditInfoViewModel
 {

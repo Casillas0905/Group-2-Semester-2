@@ -1,5 +1,6 @@
-package Core.PrincipalPage;
+package View.PrincipalPage;
 
 public class PrincipalPageViewModel
 {
+
 }
