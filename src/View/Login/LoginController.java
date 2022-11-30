@@ -1,18 +1,38 @@
 package View.Login;
 
+import Core.ViewHandler;
+import Core.ViewModelFactory;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class LoginController
 {
-  public TextField mail;
-  public TextField password;
+  private ViewHandler viewHandler;
+  private LoginViewModel loginViewModel;
 
-  public void next(ActionEvent actionEvent)
+  @FXML
+  private TextField username;
+  @FXML
+  private TextField password;
+
+  public void init(ViewHandler viewHandler, ViewModelFactory viewModelFactory)
   {
+    this.viewHandler = viewHandler;
+    loginViewModel = viewModelFactory.getLoginViewModel();
+    username.textProperty().bindBidirectional(loginViewModel.usernameProperty());
   }
 
-  public void reset(ActionEvent actionEvent)
+  @FXML
+  public void onNext(ActionEvent actionEvent)
   {
+    loginViewModel.setUsername();
+    viewHandler.openPrincipalPageView();
+  }
+
+  @FXML
+  public void onReset(ActionEvent actionEvent)
+  {
+    System.out.println("reset button pressed");
   }
 }
