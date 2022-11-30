@@ -1,13 +1,16 @@
 package Model;
 
+import javafx.scene.image.ImageView;
+
 public class Item
 {
-  private User user;
-  private int price;
+  //private ImageView picture;
+  private String user;
+  private String price;
   private String title, description, subCategory;
   private boolean sold;
 
-  public Item(User user, int price, String title, String description, String subCategory)
+  public Item(String user, String price, String title, String description, String subCategory)
   {
     this.user = user;
     this.price = price;
@@ -15,26 +18,6 @@ public class Item
     this.description = description;
     this.subCategory = subCategory;
     sold=false;
-  }
-
-  public User getUser()
-  {
-    return user;
-  }
-
-  public void setUser(User user)
-  {
-    this.user = user;
-  }
-
-  public int getPrice()
-  {
-    return price;
-  }
-
-  public void setPrice(int price)
-  {
-    this.price = price;
   }
 
   public String getTitle()
@@ -76,4 +59,25 @@ public class Item
   {
     sold=true;
   }
+
+  public String getPrice()
+  {
+    return price;
+  }
+
+  public void setPrice(String price)
+  {
+    this.price = price;
+  }
+
+  public String getUser()
+  {
+    return user;
+  }
+
+  public void setUser(String user)
+  {
+    this.user = user;
+  }
+
 }

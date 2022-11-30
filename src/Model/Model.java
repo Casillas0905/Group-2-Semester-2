@@ -4,5 +4,6 @@ import Util.PropertyChangeSubject;
 
 public interface Model extends PropertyChangeSubject
 {
-  void uploadItem(int price, String title, String desc, String subCategory);
+  Item uploadItem(String price, String title, String desc, String subCategory);
+  void setUser(String user);
 }
