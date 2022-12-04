@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="274.0" fx:controller="Client.View.Why.WhyController" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="63.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Why do you want to report?" />
+      <TextArea fx:id="reasonText" layoutX="37.0" layoutY="118.0" prefHeight="111.0" prefWidth="200.0" />
+      <Text layoutX="91.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Give some details...">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
+      <Button layoutX="112.0" layoutY="272.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+   </children>
+</Pane>
