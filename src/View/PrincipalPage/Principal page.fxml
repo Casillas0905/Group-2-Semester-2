@@ -17,7 +17,7 @@
           <TableColumn fx:id="userColumn" prefWidth="125.0" text="User" />
           <TableColumn fx:id="titleColumn" prefWidth="200.0" text="Title of the item" />
             <TableColumn fx:id="priceColumn" prefWidth="125.0" text="Estimated price" />
-            <TableColumn fx:id="detailsColumn" prefWidth="116.0" text="Subcategory" />
+            <TableColumn fx:id="commentColumn" prefWidth="115.0" text="Comment Section" />
         </columns>
       </TableView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="37.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
