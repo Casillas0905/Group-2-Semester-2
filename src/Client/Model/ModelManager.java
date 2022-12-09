@@ -25,6 +25,7 @@ public class ModelManager implements Model
     support.firePropertyChange(event);
   }
 
+
   @Override public void uploadItem(String picture, String price, String title, String desc,
       String subCategory)
   {

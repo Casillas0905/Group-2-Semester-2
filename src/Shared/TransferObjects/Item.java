@@ -11,6 +11,7 @@ public class Item implements Serializable
   private boolean sold;
 
   public Item(String picture, String user, String price, String title, String description, String subCategory)
+
   {
     this.picture = picture;
     this.user = user;

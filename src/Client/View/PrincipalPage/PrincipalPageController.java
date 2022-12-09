@@ -2,13 +2,11 @@ package Client.View.PrincipalPage;
 
 import Client.Core.ViewHandler;
 import Client.Core.ViewModelFactory;
-import Shared.TransferObjects.Item;
+import Shared.TransferObjects.CommentButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-
 
 public class PrincipalPageController
 {
@@ -16,17 +14,19 @@ public class PrincipalPageController
   private PrincipalPageViewModel principalPageViewModel;
 
   @FXML
-  private TableView <Item> itemsTable;
+  private TableView <DataRow> itemsTable;
   @FXML
-  private TableColumn <Item, String> pictureColumn;
+  private TableColumn <DataRow, String> pictureColumn;
   @FXML
-  private TableColumn <Item, String> userColumn;
+  private TableColumn <DataRow, String> userColumn;
   @FXML
-  private TableColumn <Item, String> titleColumn;
+  private TableColumn <DataRow, String> titleColumn;
   @FXML
-  private TableColumn <Item, String> priceColumn;
+  private TableColumn <DataRow, String> priceColumn;
   @FXML
-  private TableColumn <Item, String> detailsColumn;
+  private TableColumn <DataRow, CommentButton> commentColumn;
+
+
 
   public void init(ViewHandler viewHandler, ViewModelFactory vmf)
   {
@@ -36,11 +36,10 @@ public class PrincipalPageController
     itemsTable.setItems(principalPageViewModel.getItemsSection());
 
     pictureColumn.setCellValueFactory(new PropertyValueFactory<>("picture"));
-
     userColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
     titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-    detailsColumn.setCellValueFactory(new PropertyValueFactory<>("subCategory"));
+    commentColumn.setCellValueFactory(new PropertyValueFactory<>("button"));
 
   }
 
@@ -55,4 +54,6 @@ public class PrincipalPageController
   {
     viewHandler.openPostItemView();
   }
+
+
 }

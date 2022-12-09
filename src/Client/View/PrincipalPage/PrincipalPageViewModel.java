@@ -1,7 +1,6 @@
 package Client.View.PrincipalPage;
 
 import Client.Model.Model;
-import Shared.TransferObjects.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,7 +9,7 @@ import java.beans.PropertyChangeEvent;
 public class PrincipalPageViewModel
 {
   private Model model;
-  private ObservableList<Item> itemsSection;
+  private ObservableList itemsSection;
 
   public PrincipalPageViewModel(Model model)
   {
@@ -21,11 +20,12 @@ public class PrincipalPageViewModel
 
   private void itemsTable(PropertyChangeEvent event)
   {
-    itemsSection.add((Item) event.getNewValue());
+    itemsSection.add(event.getNewValue());
   }
 
-  public ObservableList<Item> getItemsSection()
+  public ObservableList getItemsSection()
   {
     return itemsSection;
   }
+
 }
