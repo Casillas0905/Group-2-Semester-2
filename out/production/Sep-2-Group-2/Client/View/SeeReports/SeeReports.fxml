@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.View.SeeReports.SeeReportsController">
+   <children>
+      <Text layoutX="30.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reported comments" />
+      <TextArea fx:id="reportedComments" layoutX="30.0" layoutY="66.0" prefHeight="123.0" prefWidth="287.0" />
+      <Text layoutX="30.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reported Users" />
+      <ListView fx:id="reportedUsers" layoutX="30.0" layoutY="233.0" prefHeight="166.0" prefWidth="287.0" />
+      <Button layoutX="153.0" layoutY="408.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</Pane>
