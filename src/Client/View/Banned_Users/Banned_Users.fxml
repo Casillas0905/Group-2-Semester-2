@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.View.Banned_Users.BannedUsersController">
+   <children>
+      <Text layoutX="82.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Banned Users">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <ListView layoutX="32.0" layoutY="87.0" prefHeight="289.0" prefWidth="229.0" />
+      <Button layoutX="128.0" layoutY="389.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</Pane>

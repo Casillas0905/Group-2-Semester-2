@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="349.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.View.EditInfo.EditInfoController">
+   <children>
+      <Text layoutX="28.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit information" />
+      <Text layoutX="62.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname" />
+      <Text layoutX="63.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
+      <Text layoutX="61.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="61.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Via e-mail" />
+      <Text layoutX="66.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
+      <TextField fx:id="firstName" layoutX="94.0" layoutY="91.0" />
+      <TextField fx:id="lastName" layoutX="94.0" layoutY="154.0" />
+      <TextField fx:id="username" layoutX="94.0" layoutY="223.0" />
+      <TextField fx:id="email" layoutX="94.0" layoutY="301.0" />
+      <Button layoutX="129.0" layoutY="434.0" mnemonicParsing="false" text="New password" />
+      <Button layoutX="157.0" layoutY="487.0" mnemonicParsing="false" text="Next" />
+      <DatePicker fx:id="birthday" layoutX="89.0" layoutY="380.0" />
+   </children>
+</Pane>

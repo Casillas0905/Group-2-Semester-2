@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="309.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.View.Welcome.WelcomeController">
+   <children>
+      <Text fill="#77b55c" layoutX="47.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to VIA second hand store!">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="46.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you have an account?" />
+      <Button layoutX="130.0" layoutY="157.0" mnemonicParsing="false" onAction="#login" text="Log in" />
+      <Text layoutX="49.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you a new member?" />
+      <Button layoutX="125.0" layoutY="253.0" mnemonicParsing="false" onAction="#register" text="Register" />
+   </children>
+</Pane>
