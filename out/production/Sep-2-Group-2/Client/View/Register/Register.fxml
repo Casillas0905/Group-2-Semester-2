@@ -18,7 +18,8 @@
       <TextField fx:id="Username" layoutX="97.0" layoutY="182.0" />
       <TextField fx:id="password" layoutX="98.0" layoutY="237.0" />
       <TextField fx:id="mail" layoutX="98.0" layoutY="290.0" />
-      <DatePicker layoutX="88.0" layoutY="347.0" />
-      <Button layoutX="150.0" layoutY="387.0" mnemonicParsing="false" text="Next" />
+      <Button layoutX="150.0" layoutY="387.0" mnemonicParsing="false" onAction="#Register" text="Register" />
+      <Button layoutX="159.0" layoutY="424.0" mnemonicParsing="false" onAction="#BackToLogin" text="Back" />
+      <TextField fx:id="birthday" layoutX="101.0" layoutY="338.0" />
    </children>
 </Pane>

@@ -3,6 +3,7 @@ package Client.Core;
 import Client.View.Login.LoginViewModel;
 import Client.View.PostItems.PostItemsViewModel;
 import Client.View.PrincipalPage.PrincipalPageViewModel;
+import Client.View.Register.RegisterViewModel;
 
 public class ViewModelFactory
 {
@@ -10,6 +11,7 @@ public class ViewModelFactory
   private LoginViewModel loginViewModel;
   private PostItemsViewModel postItemsViewModel;
   private PrincipalPageViewModel principalPageViewModel;
+  private RegisterViewModel registerViewModel;
 
   public ViewModelFactory(ModelFactory modelFactory)
   {
@@ -41,6 +43,13 @@ public class ViewModelFactory
       principalPageViewModel = new PrincipalPageViewModel(modelFactory.getModel());
     }
     return principalPageViewModel;
+  }
+
+  public RegisterViewModel getRegisterViewModel(){
+    if(registerViewModel == null){
+      registerViewModel= new RegisterViewModel(modelFactory.getModel());
+    }
+    return registerViewModel;
   }
 
 }

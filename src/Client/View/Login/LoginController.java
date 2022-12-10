@@ -30,11 +30,18 @@ public class LoginController
   {
     loginViewModel.setUsername();
     viewHandler.openPrincipalPageView();
+
   }
 
   @FXML
   public void onReset(ActionEvent actionEvent)
   {
     System.out.println("reset button pressed");
+  }
+
+  public void register(ActionEvent actionEvent)
+  {
+    viewHandler.openRegisterView();
+
   }
 }
