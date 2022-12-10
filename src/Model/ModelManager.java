@@ -45,11 +45,12 @@ public class ModelManager implements Model
       throws SQLException
   {
     for (int i=0;i<database.getEmailsRegistered().size();i++){
-      if(!(email.equalsIgnoreCase(database.getEmailsRegistered().get(0)))){
+      if(!(email.equalsIgnoreCase(database.getEmailsRegistered().get(i)))){
         for (int j=0;j<database.getUsersRegistered().size();j++){
           if(!(username.equalsIgnoreCase(database.getUsersRegistered().get(i)))){
+            System.out.println("user registered");
             database.registerUserr(email, password, username, fname, lname, birth);
-          }
+        }
         }
       }
     }

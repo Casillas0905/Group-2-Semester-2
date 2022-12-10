@@ -1,5 +1,8 @@
 package Database;
 
+import Model.Item;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -30,10 +33,14 @@ public class DatabaseMethods implements Database
     connect().close();
   }
 
-  @Override public void addItem(String title, String price, String desc,
-      String subCategory)
+  @Override public void addItem(String title, String price, String desc) throws SQLException
   {
+    connect();
+    Statement stmt= statement();
 
+    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category_id)"
+        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','0')");
+    connect().close();
   }
 
   @Override public ArrayList<String> getUsersRegistered() throws SQLException

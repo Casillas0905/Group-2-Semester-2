@@ -1,15 +1,20 @@
 package View.PostItems;
 
+import Database.Database;
+import Database.DatabaseMethods;
 import Model.Model;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.sql.SQLException;
+
 public class PostItemsViewModel
 {
   private Model model;
   private StringProperty title, description, subCategory, price;
+  private Database database= new DatabaseMethods();
 
 
   public PostItemsViewModel(Model model)
@@ -44,7 +49,7 @@ public class PostItemsViewModel
     return price;
   }
 
-  void uploadItem()
+  void uploadItem() throws SQLException
   {
     String titleInput = title.get();
     String descInput = description.get();
@@ -52,6 +57,7 @@ public class PostItemsViewModel
     String priceInput = price.get();
 
     model.uploadItem(priceInput, titleInput, descInput, subCategoryInput);
+    database.addItem(titleInput,priceInput,descInput);
   }
 
   public void clear()

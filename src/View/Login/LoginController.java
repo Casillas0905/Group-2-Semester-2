@@ -28,6 +28,7 @@ public class LoginController
   {
     loginViewModel.setUsername();
     viewHandler.openPrincipalPageView();
+
   }
 
   @FXML
@@ -39,5 +40,6 @@ public class LoginController
   public void register(ActionEvent actionEvent)
   {
     viewHandler.openRegisterView();
+
   }
 }
