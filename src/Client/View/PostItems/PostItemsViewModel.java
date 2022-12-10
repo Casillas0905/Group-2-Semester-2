@@ -1,13 +1,21 @@
 package Client.View.PostItems;
 
 import Client.Model.Model;
+import Database.Database;
+import Database.DatabaseMethods;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import java.sql.SQLException;
 
 public class PostItemsViewModel
 {
   private Model model;
+  private Database database= new DatabaseMethods();
   private StringProperty title, description, subCategory, price, picture, error;
+
 
 
   public PostItemsViewModel(Model model)
@@ -44,16 +52,15 @@ public class PostItemsViewModel
     return price;
   }
 
-  void uploadItem()
+  void uploadItem() throws SQLException
   {
     String titleInput = title.get();
     String descInput = description.get();
     String subCategoryInput = subCategory.get();
     String priceInput = price.get();
     String pictureInput = picture.get();
-
-      model.uploadItem(pictureInput, priceInput, titleInput, descInput,
-        subCategoryInput);
+    database.addItem(titleInput,priceInput,descInput);
+    model.uploadItem(pictureInput, priceInput, titleInput, descInput, subCategoryInput);
       error.set("");
 
       System.out.println("item uploaded...");
