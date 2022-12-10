@@ -3,6 +3,7 @@ package Client.Network;
 import Shared.Network.ClientCallBack;
 import Shared.Network.RMIServer;
 import Shared.TransferObjects.Item;
+import Shared.TransferObjects.User;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -12,6 +13,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 
 public class RMIClient implements Client, ClientCallBack, Serializable
 {
@@ -48,6 +50,23 @@ public class RMIClient implements Client, ClientCallBack, Serializable
     return item1;
   }
 
+  @Override public User Register(User user) throws SQLException
+  {
+    User user1= null;
+    System.out.println("RMIClient");
+
+    try
+    {
+      user1=server.registerUser(user);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+
+    return user1;
+  }
+
   @Override public String setUser(String user)
   {
     try
@@ -78,6 +97,8 @@ public class RMIClient implements Client, ClientCallBack, Serializable
       e.printStackTrace();
     }
   }
+
+
 
   @Override public void update(Item item) throws RemoteException
   {

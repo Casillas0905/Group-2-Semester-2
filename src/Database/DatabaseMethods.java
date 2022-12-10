@@ -1,8 +1,5 @@
 package Database;
 
-import Model.Item;
-import javafx.collections.ObservableList;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -27,9 +24,9 @@ public class DatabaseMethods implements Database
   {
     connect();
     Statement stmt= statement();
-
     stmt.execute("INSERT INTO sepproject2.userr (email, pasword, username, fName, lName, birth)"
         + "VALUES ('"+email+"','"+password+"','"+username+"','"+fname+"','"+lname+"','"+birth+"')");
+    System.out.println("Database methods");
     connect().close();
   }
 

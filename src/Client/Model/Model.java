@@ -10,4 +10,5 @@ public interface Model extends PropertyChangeSubject
   void setUser(String user);
   void registerUser(String email,String password,String username,String fname,String lname,String birth)
       throws SQLException;
+  boolean isUserOrEmailFree(String email,String username) throws SQLException;
 }

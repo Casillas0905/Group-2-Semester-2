@@ -4,12 +4,14 @@ import Server.Model.Manager;
 import Shared.Network.ClientCallBack;
 import Shared.Network.RMIServer;
 import Shared.TransferObjects.Item;
+import Shared.TransferObjects.User;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 
 public class RMIServerImpl implements RMIServer
 {
@@ -24,6 +26,11 @@ public class RMIServerImpl implements RMIServer
   @Override public Item uploadItem(Item item) throws RemoteException
   {
     return manager.uploadItem(item);
+  }
+
+  @Override public User registerUser(User user) throws SQLException,RemoteException
+  {
+    return manager.register(user);
   }
 
   public void startServer() throws RemoteException, AlreadyBoundException

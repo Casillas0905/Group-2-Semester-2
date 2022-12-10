@@ -3,19 +3,13 @@ package Client.Model;
 
 import Database.Database;
 import Database.DatabaseMethods;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import Shared.TransferObjects.User;
 import Client.Network.Client;
 import Shared.TransferObjects.Item;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.io.File;
-import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class ModelManager implements Model
 {
@@ -50,17 +44,21 @@ public class ModelManager implements Model
   @Override public void registerUser(String email,String password,String username,String fname,String lname,String birth)
       throws SQLException
   {
-    for (int i=0;i<database.getEmailsRegistered().size();i++){
-      if(!(email.equalsIgnoreCase(database.getEmailsRegistered().get(i)))){
-        for (int j=0;j<database.getUsersRegistered().size();j++){
-          if(!(username.equalsIgnoreCase(database.getUsersRegistered().get(i)))){
-            System.out.println("user registered");
-            database.registerUserr(email, password, username, fname, lname, birth);
-        }
-        }
-      }
+    System.out.println("Model Manager");
+    client.Register(new User(username, email, password, fname, lname, birth));
+    if(isUserOrEmailFree(email,username)){
+      database.registerUserr(email.toLowerCase(), password, username.toLowerCase(), fname,lname, birth);
+      System.out.println("user registered model manager");
     }
   }
+
+  public boolean isUserOrEmailFree(String email,String username) throws SQLException
+  {
+    if (!(database.getEmailsRegistered().contains(email.toLowerCase())) || !(database.getUsersRegistered().contains(username.toLowerCase())))
+    {return true;}
+      else return false;
+  }
+
 
   @Override public void addListener(PropertyChangeListener listener)
   {
