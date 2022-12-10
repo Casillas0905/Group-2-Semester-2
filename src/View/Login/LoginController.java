@@ -35,4 +35,9 @@ public class LoginController
   {
     System.out.println("reset button pressed");
   }
+
+  public void register(ActionEvent actionEvent)
+  {
+    viewHandler.openRegisterView();
+  }
 }

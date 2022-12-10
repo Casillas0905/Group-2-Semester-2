@@ -3,6 +3,7 @@ package Core;
 import View.Login.LoginController;
 import View.PostItems.PostItemController;
 import View.PrincipalPage.PrincipalPageController;
+import View.Register.RegisterController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ public class ViewHandler
 {
   private ViewModelFactory viewModelFactory;
 
-  private Scene logInScene, mainPageScene, postItemScene;
+  private Scene logInScene, mainPageScene, postItemScene,registerScene;
   private Stage stage;
 
   public ViewHandler(ViewModelFactory viewModelFactory)
@@ -28,7 +29,7 @@ public class ViewHandler
     openLogInView();
   }
 
-  private void openLogInView()
+  public void openLogInView()
   {
     if(logInScene == null)
     {
@@ -79,6 +80,16 @@ public class ViewHandler
     controller.init(this, viewModelFactory);
     return root;
   }
+  private Parent loadFXMLRegister(String path) throws IOException
+  {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource(path));
+    Parent root = loader.load();
+
+    RegisterController controller = loader.getController();
+    controller.init(this, viewModelFactory);
+    return root;
+  }
 
   public void openPostItemView()
   {
@@ -114,4 +125,24 @@ public class ViewHandler
       stage.setScene(mainPageScene);
       stage.show();
     }
+
+  public void openRegisterView()
+  {
+    try
+    {
+      Parent root = loadFXMLRegister(
+          "../View/Register/Register.fxml");
+
+      stage.setTitle("Register");
+      registerScene = new Scene(root);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    stage.setScene(registerScene);
+    stage.show();
+  }
+
+
 }
