@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.View.Deleted_Comments.DeletedCommentsController">
+   <children>
+      <Text layoutX="75.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deleted comments">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ListView layoutX="40.0" layoutY="83.0" prefHeight="241.0" prefWidth="233.0" />
+      <Button layoutX="136.0" layoutY="336.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</Pane>
