@@ -1,8 +1,7 @@
 package Client.View.Register;
 
-import Core.ViewHandler;
-import Core.ViewModelFactory;
-import View.PostItems.PostItemsViewModel;
+import Client.Core.ViewHandler;
+import Client.Core.ViewModelFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;

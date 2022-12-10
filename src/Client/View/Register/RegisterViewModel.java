@@ -1,15 +1,11 @@
 package Client.View.Register;
 
-import Model.Model;
-import javafx.beans.property.SimpleObjectProperty;
+
+import Client.Model.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.DatePicker;
-import javafx.util.converter.LocalDateStringConverter;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 
 public class RegisterViewModel
 {
