@@ -30,15 +30,6 @@ public class ManagerImpl implements Manager
 
   @Override public User register(User user) throws SQLException
   {
-    System.out.println("register method enter");
-    if (!(database.getEmailsRegistered().contains(user.getEmail().toLowerCase())))
-    {
-      if (!(database.getUsersRegistered().contains(user.getUsername().toLowerCase())))
-      {
-        database.registerUserr(user.getEmail().toLowerCase(), user.getPassword(), user.getUsername().toLowerCase(), user.getFname(), user.getLname(), user.getBirth());
-        System.out.println("user registered");
-      }
-    }
     return user;
   }
 

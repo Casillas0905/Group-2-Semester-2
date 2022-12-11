@@ -35,8 +35,8 @@ public class DatabaseMethods implements Database
     connect();
     Statement stmt= statement();
 
-    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category)"
-        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','"+subCategory+"')");
+    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category_id)"
+        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','0')");
     connect().close();
   }
 
