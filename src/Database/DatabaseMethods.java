@@ -32,13 +32,13 @@ public class DatabaseMethods implements Database
     connect().close();
   }
 
-  @Override public void addItem(String title, String price, String desc) throws SQLException
+  @Override public void addItem(String title, String price, String desc,String subCategory) throws SQLException
   {
     connect();
     Statement stmt= statement();
 
-    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category_id)"
-        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','0')");
+    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category)"
+        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','"+subCategory+"')");
     connect().close();
   }
 
@@ -52,6 +52,7 @@ public class DatabaseMethods implements Database
         userRegistered.add(resultSet.getString("username"));
       }
       connect().close();
+      statement.close();
       return userRegistered;
     }
 

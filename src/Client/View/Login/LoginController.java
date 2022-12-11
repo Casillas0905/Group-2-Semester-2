@@ -56,6 +56,5 @@ public class LoginController
   public void register(ActionEvent actionEvent)
   {
     viewHandler.openRegisterView();
-
   }
 }

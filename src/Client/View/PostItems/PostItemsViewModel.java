@@ -59,7 +59,7 @@ public class PostItemsViewModel
     String subCategoryInput = subCategory.get();
     String priceInput = price.get();
     String pictureInput = picture.get();
-    database.addItem(titleInput,priceInput,descInput);
+    database.addItem(titleInput,priceInput,descInput,subCategoryInput);
     model.uploadItem(pictureInput, priceInput, titleInput, descInput, subCategoryInput);
       error.set("");
 
