@@ -2,9 +2,6 @@ package Client.View.Register;
 
 import Client.Core.ViewHandler;
 import Client.Core.ViewModelFactory;
-
-import Client.Core.ViewHandler;
-import Client.Core.ViewModelFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -20,7 +17,7 @@ public class RegisterController
   private ViewHandler viewHandler;
   private RegisterViewModel registerViewModel;
 
-  @FXML
+ @FXML
   public Label errorLabel;
   @FXML
   public TextField firstName;
@@ -56,8 +53,8 @@ public class RegisterController
       registerViewModel.showError();
     }
     else {registerViewModel.registerUser();
-      registerViewModel.clear();
-      viewHandler.openPrincipalPageView();}
+    registerViewModel.clear();
+    viewHandler.openPrincipalPageView();}
 
   }
 

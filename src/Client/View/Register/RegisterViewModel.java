@@ -68,8 +68,6 @@ public class RegisterViewModel
     String passwordInP= password.get();
     String mailInp= mail.get();
     String birthInp= birth.get();
-    model.registerUser(mailInp,passwordInP,usernameInp,fistNameInp,lastNameInp,birthInp);
-    //database.registerUserr(mailInp,passwordInP,usernameInp,fistNameInp,lastNameInp,birthInp);
     model.registerUser(fistNameInp,lastNameInp,usernameInp,passwordInP,mailInp,birthInp);
   }
 

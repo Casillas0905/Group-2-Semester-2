@@ -59,6 +59,11 @@ public class ModelManager implements Model
       else return false;
   }
 
+  @Override public boolean LogIn(String username, String password)
+      throws SQLException
+  {
+    return database.LogIn(username, password);
+  }
 
   @Override public void addListener(PropertyChangeListener listener)
   {

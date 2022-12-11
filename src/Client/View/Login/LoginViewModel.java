@@ -5,17 +5,21 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 
+import java.sql.SQLException;
+
 public class LoginViewModel
 {
   private Model model;
   private StringProperty username;
   private StringProperty password;
+  private StringProperty error;
 
   public LoginViewModel(Model model)
   {
     this.model = model;
     username = new SimpleStringProperty();
     password = new SimpleStringProperty();
+    error= new SimpleStringProperty();
   }
 
   public void setUsername()
@@ -39,17 +43,21 @@ public class LoginViewModel
     return password;
   }
 
-  public String errorProperty()
+  public StringProperty errorProperty()
   {
-    return errorProperty();
+    return error;
   }
 
-  public boolean logIn()
-  {
-    return true;
+  public void showError(){
+    error.set("Username/password incorrect or empty");
   }
 
-  public void showError()
+  public boolean logIn() throws SQLException
   {
+    String usernameInp= username.get();
+    String passwordInp= password.get();
+   return model.LogIn(usernameInp,passwordInp);
   }
+
+
 }
