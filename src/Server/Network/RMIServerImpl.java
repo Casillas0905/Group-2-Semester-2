@@ -36,7 +36,7 @@ public class RMIServerImpl implements RMIServer
   public void startServer() throws RemoteException, AlreadyBoundException
   {
     System.out.println("Server started...");
-    Registry registry = LocateRegistry.createRegistry(0);
+    Registry registry = LocateRegistry.createRegistry(1099);
     registry.bind("ThriftShopServer", this);
   }
 
