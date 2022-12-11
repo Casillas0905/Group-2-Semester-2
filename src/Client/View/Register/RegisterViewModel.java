@@ -69,6 +69,8 @@ public class RegisterViewModel
     String mailInp= mail.get();
     String birthInp= birth.get();
     model.registerUser(mailInp,passwordInP,usernameInp,fistNameInp,lastNameInp,birthInp);
+    //database.registerUserr(mailInp,passwordInP,usernameInp,fistNameInp,lastNameInp,birthInp);
+    model.registerUser(fistNameInp,lastNameInp,usernameInp,passwordInP,mailInp,birthInp);
   }
 
   public boolean isUserOrEmailFree(String email,String username)

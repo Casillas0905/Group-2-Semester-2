@@ -42,12 +42,6 @@ public class ManagerImpl implements Manager
     return user;
   }
 
-  @Override public boolean LogIn(String username, String password)
-      throws SQLException
-  {
-    return database.LogIn(username, password);
-  }
-
   @Override public void setUser(String user)
   {
     this.user = user;

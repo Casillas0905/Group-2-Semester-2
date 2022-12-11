@@ -4,20 +4,14 @@ import Client.Core.ViewHandler;
 import Client.Core.ViewModelFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.sql.SQLException;
-
 public class LoginController
 {
-
   private ViewHandler viewHandler;
   private LoginViewModel loginViewModel;
 
-  @FXML
-  public Label errorLabel;
   @FXML
   private TextField username;
   @FXML
@@ -29,21 +23,13 @@ public class LoginController
     loginViewModel = viewModelFactory.getLoginViewModel();
     username.textProperty().bindBidirectional(loginViewModel.usernameProperty());
     password.textProperty().bindBidirectional(loginViewModel.passwordProperty());
-
-    errorLabel.textProperty().bind(loginViewModel.errorProperty());
   }
 
   @FXML
-  public void onNext(ActionEvent actionEvent) throws SQLException
+  public void onNext(ActionEvent actionEvent)
   {
-    if(loginViewModel.logIn()){
-      loginViewModel.setUsername();
-      viewHandler.openPrincipalPageView();
-    }else {
-      loginViewModel.showError();
-    }
-
-
+    loginViewModel.setUsername();
+    viewHandler.openPrincipalPageView();
 
   }
 

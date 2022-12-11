@@ -1,8 +1,6 @@
 package Database;
 
 
-import Shared.TransferObjects.Item;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +12,5 @@ public interface Database
       throws SQLException;
   ArrayList<String> getUsersRegistered() throws SQLException;
   ArrayList<String> getEmailsRegistered() throws SQLException;
-  ArrayList<Item> getAllItems();
-  boolean LogIn(String username, String password) throws SQLException;
 
 }

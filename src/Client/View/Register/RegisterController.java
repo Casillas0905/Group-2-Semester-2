@@ -61,6 +61,5 @@ public class RegisterController
   public void BackToLogin(ActionEvent actionEvent)
   {
     viewHandler.openLogInView();
-    System.out.println("back pressed");
   }
 }

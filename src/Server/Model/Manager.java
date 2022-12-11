@@ -11,5 +11,4 @@ public interface Manager extends PropertyChangeSubject
   Item uploadItem(Item item);
   void setUser(String user);
   User register(User user) throws SQLException;
-  boolean LogIn(String username, String password) throws SQLException;
 }
