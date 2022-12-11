@@ -28,4 +28,5 @@ public class PrincipalPageViewModel
   {
     return itemsSection;
   }
+
 }

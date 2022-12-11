@@ -3,8 +3,6 @@ package Client.View.PostItems;
 import Client.Model.Model;
 import Database.Database;
 import Database.DatabaseMethods;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -59,9 +57,12 @@ public class PostItemsViewModel
     String subCategoryInput = subCategory.get();
     String priceInput = price.get();
     String pictureInput = picture.get();
-    database.addItem(titleInput,priceInput,descInput);
+
+
+    //database.addItem(titleInput,priceInput,descInput);
     model.uploadItem(pictureInput, priceInput, titleInput, descInput, subCategoryInput);
-      error.set("");
+
+    error.set("");
 
       System.out.println("item uploaded...");
 
