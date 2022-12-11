@@ -42,9 +42,6 @@ public class LoginController
     }else {
       loginViewModel.showError();
     }
-
-
-
   }
 
   @FXML

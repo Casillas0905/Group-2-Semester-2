@@ -49,7 +49,7 @@ public class RegisterController
 
   public void Register(ActionEvent actionEvent) throws SQLException
   {
-    if(registerViewModel.isUserOrEmailFree(mail.textProperty().get(),Username.textProperty().get())){
+    if((!registerViewModel.isUserOrEmailFree(mail.textProperty().get(),Username.textProperty().get()))){
       registerViewModel.showError();
     }
     else {registerViewModel.registerUser();
