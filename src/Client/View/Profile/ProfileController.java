@@ -9,6 +9,7 @@ public class ProfileController
 
   public void editInfo(ActionEvent actionEvent)
   {
+    System.out.println("edit info");
   }
 
   public void manageItems(ActionEvent actionEvent)
