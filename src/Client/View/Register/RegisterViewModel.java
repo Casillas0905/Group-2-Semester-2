@@ -2,8 +2,11 @@ package Client.View.Register;
 
 
 import Client.Model.Model;
+import Database.Database;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import Database.DatabaseMethods;
+import javafx.beans.value.ObservableValue;
 
 import java.sql.SQLException;
 
@@ -11,7 +14,8 @@ public class RegisterViewModel
 {
 
   private Model model;
-  private StringProperty firstName,LastName, Username, password, mail,birth;
+  private StringProperty firstName,LastName, Username, password, mail,birth,error;
+  private Database database= new DatabaseMethods();
 
 
   public RegisterViewModel(Model model)
@@ -23,6 +27,7 @@ public class RegisterViewModel
     password= new SimpleStringProperty();
     mail= new SimpleStringProperty();
     birth= new SimpleStringProperty();
+    error= new SimpleStringProperty();
   }
 
   public StringProperty firstNameProperty()
@@ -63,8 +68,13 @@ public class RegisterViewModel
     String passwordInP= password.get();
     String mailInp= mail.get();
     String birthInp= birth.get();
-
     model.registerUser(fistNameInp,lastNameInp,usernameInp,passwordInP,mailInp,birthInp);
+  }
+
+  public boolean isUserOrEmailFree(String email,String username)
+      throws SQLException
+  {
+    return model.isUserOrEmailFree(email, username);
   }
 
   public void clear()
@@ -75,5 +85,14 @@ public class RegisterViewModel
     password.setValue("");
     mail.setValue("");
     birth.set("");
+  }
+
+  public StringProperty errorProperty()
+  {
+    return error;
+  }
+
+  public void showError(){
+    error.set("Try another username or email");
   }
 }

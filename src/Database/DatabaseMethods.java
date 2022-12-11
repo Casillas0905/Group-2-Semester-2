@@ -1,7 +1,6 @@
 package Database;
 
-
-import javafx.collections.ObservableList;
+import Shared.TransferObjects.Item;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,9 +26,9 @@ public class DatabaseMethods implements Database
   {
     connect();
     Statement stmt= statement();
-
     stmt.execute("INSERT INTO sepproject2.userr (email, pasword, username, fName, lName, birth)"
         + "VALUES ('"+email+"','"+password+"','"+username+"','"+fname+"','"+lname+"','"+birth+"')");
+    System.out.println("Database methods");
     connect().close();
   }
 
@@ -67,6 +66,25 @@ public class DatabaseMethods implements Database
     }
     connect().close();
     return emailRegistered;
+  }
+
+  @Override public ArrayList<Item> getAllItems()
+  {
+    return null;
+  }
+
+  @Override public boolean LogIn(String username, String password)
+      throws SQLException
+  {
+    connect();
+    Statement statement=statement();
+    String passwordDatabase=null;
+    ResultSet resultSet=statement.executeQuery("SELECT pasword,username\n"
+        + "FROM sepproject2.userr\n" + "WHERE username='"+username.toLowerCase()+"';");
+    while (resultSet.next()){
+      passwordDatabase=resultSet.getString("pasword");
+    }
+    return password.equals(passwordDatabase);
   }
 
 }

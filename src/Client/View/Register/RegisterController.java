@@ -5,6 +5,7 @@ import Client.Core.ViewModelFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
@@ -16,8 +17,8 @@ public class RegisterController
   private ViewHandler viewHandler;
   private RegisterViewModel registerViewModel;
 
- /* @FXML
-  public DatePicker birth;*/
+ @FXML
+  public Label errorLabel;
   @FXML
   public TextField firstName;
   @FXML
@@ -42,17 +43,24 @@ public class RegisterController
     password.textProperty().bindBidirectional(registerViewModel.passwordProperty());
     mail.textProperty().bindBidirectional(registerViewModel.mailProperty());
     birthday.textProperty().bindBidirectional(registerViewModel.birthProperty());
+
+    errorLabel.textProperty().bind(registerViewModel.errorProperty());
   }
 
   public void Register(ActionEvent actionEvent) throws SQLException
   {
-    registerViewModel.registerUser();
+    if((!registerViewModel.isUserOrEmailFree(mail.textProperty().get(),Username.textProperty().get()))){
+      registerViewModel.showError();
+    }
+    else {registerViewModel.registerUser();
     registerViewModel.clear();
-    viewHandler.openPrincipalPageView();
+    viewHandler.openPrincipalPageView();}
+
   }
 
   public void BackToLogin(ActionEvent actionEvent)
   {
     viewHandler.openLogInView();
+    System.out.println("back pressed");
   }
 }
