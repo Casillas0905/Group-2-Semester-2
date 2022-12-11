@@ -3,6 +3,7 @@ package Client.View.Login;
 import Client.Model.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 
 public class LoginViewModel
 {
@@ -36,5 +37,19 @@ public class LoginViewModel
   public StringProperty passwordProperty()
   {
     return password;
+  }
+
+  public String errorProperty()
+  {
+    return errorProperty();
+  }
+
+  public boolean logIn()
+  {
+    return true;
+  }
+
+  public void showError()
+  {
   }
 }
