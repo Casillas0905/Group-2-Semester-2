@@ -1,5 +1,7 @@
 package Database;
 
+import Shared.TransferObjects.Item;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -64,6 +66,25 @@ public class DatabaseMethods implements Database
     }
     connect().close();
     return emailRegistered;
+  }
+
+  @Override public ArrayList<Item> getAllItems()
+  {
+    return null;
+  }
+
+  @Override public boolean LogIn(String username, String password)
+      throws SQLException
+  {
+    connect();
+    Statement statement=statement();
+    String passwordDatabase=null;
+    ResultSet resultSet=statement.executeQuery("SELECT pasword,username\n"
+        + "FROM sepproject2.userr\n" + "WHERE username='"+username.toLowerCase()+"';");
+    while (resultSet.next()){
+      passwordDatabase=resultSet.getString("pasword");
+    }
+    return password.equals(passwordDatabase);
   }
 
 }

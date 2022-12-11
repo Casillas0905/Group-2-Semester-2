@@ -11,6 +11,8 @@ public interface RMIServer extends Remote
 {
   Item uploadItem(Item item) throws RemoteException;
   User registerUser(User user) throws SQLException, RemoteException;
+  boolean LogIn(String username, String password) throws SQLException,
+      RemoteException;
   String setUser(String user) throws RemoteException;
   void registerClient(ClientCallBack client) throws RemoteException;
 }

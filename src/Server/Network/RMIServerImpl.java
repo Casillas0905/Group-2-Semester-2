@@ -33,10 +33,15 @@ public class RMIServerImpl implements RMIServer
     return manager.register(user);
   }
 
+  @Override public boolean LogIn(String username, String password)throws RemoteException,SQLException
+  {
+    return manager.LogIn(username, password);
+  }
+
   public void startServer() throws RemoteException, AlreadyBoundException
   {
     System.out.println("Server started...");
-    Registry registry = LocateRegistry.createRegistry(1099);
+    Registry registry = LocateRegistry.createRegistry(0);
     registry.bind("ThriftShopServer", this);
   }
 
