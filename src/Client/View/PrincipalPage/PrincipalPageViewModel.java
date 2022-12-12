@@ -22,10 +22,12 @@ public class PrincipalPageViewModel
   private void itemsTable(PropertyChangeEvent event)
   {
     itemsSection.add((Item) event.getNewValue());
+
   }
 
   public ObservableList<Item> getItemsSection()
   {
     return itemsSection;
   }
+
 }
