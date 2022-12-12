@@ -1,16 +1,20 @@
 package Client.View.PrincipalPage;
 
 import Client.Model.Model;
+import Database.Database;
+import Database.DatabaseMethods;
 import Shared.TransferObjects.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.beans.PropertyChangeEvent;
+import java.sql.SQLException;
 
 public class PrincipalPageViewModel
 {
   private Model model;
   private ObservableList<Item> itemsSection;
+  private  Database database= new DatabaseMethods();
 
   public PrincipalPageViewModel(Model model)
   {
@@ -25,8 +29,9 @@ public class PrincipalPageViewModel
 
   }
 
-  public ObservableList<Item> getItemsSection()
+  public ObservableList<Item> getItemsSection() throws SQLException
   {
+    itemsSection= database.getAllItems();
     return itemsSection;
   }
 

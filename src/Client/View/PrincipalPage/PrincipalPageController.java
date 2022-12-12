@@ -3,6 +3,7 @@ package Client.View.PrincipalPage;
 import Client.Core.ViewHandler;
 import Client.Core.ViewModelFactory;
 import Shared.TransferObjects.Item;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,6 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
+
+import java.sql.SQLException;
 
 public class PrincipalPageController
 {
@@ -29,7 +32,10 @@ public class PrincipalPageController
   private TableColumn <Item, String> priceColumn;
 
 
+
+
   public void init(ViewHandler viewHandler, ViewModelFactory vmf)
+      throws SQLException
   {
     this.viewHandler = viewHandler;
     principalPageViewModel = vmf.getPrincipalPageViewModel();

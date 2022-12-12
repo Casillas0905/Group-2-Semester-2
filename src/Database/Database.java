@@ -2,6 +2,7 @@ package Database;
 
 
 import Shared.TransferObjects.Item;
+import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public interface Database
       throws SQLException;
   ArrayList<String> getUsersRegistered() throws SQLException;
   ArrayList<String> getEmailsRegistered() throws SQLException;
-  ArrayList<Item> getAllItems();
+  ObservableList<Item> getAllItems() throws SQLException;
   boolean LogIn(String username, String password) throws SQLException;
 
 }

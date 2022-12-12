@@ -1,6 +1,8 @@
 package Database;
 
 import Shared.TransferObjects.Item;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -68,9 +70,17 @@ public class DatabaseMethods implements Database
     return emailRegistered;
   }
 
-  @Override public ArrayList<Item> getAllItems()
+  @Override public ObservableList<Item> getAllItems() throws SQLException
   {
-    return null;
+    connect();
+    ObservableList<Item> list = FXCollections.observableArrayList();
+    Statement statement=statement();
+    ResultSet resultSet=statement.executeQuery("select * from sepproject2.items");
+    while (resultSet.next()){
+      list.add(new Item(resultSet.getString("url"),(resultSet.getString("user_id")),(resultSet.getString("price")),(resultSet.getString("title")),(resultSet.getString("description")),
+          (resultSet.getString("sub_category_id"))));
+    }
+    return list;
   }
 
   @Override public boolean LogIn(String username, String password)
