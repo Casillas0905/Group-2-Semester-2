@@ -36,8 +36,6 @@ public class PrincipalPageController
 
     itemsTable.setItems(principalPageViewModel.getItemsSection());
 
-    pictureColumn.setCellValueFactory(new PropertyValueFactory<>("picture"));
-
     addButtonToTable();
 
     userColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
@@ -94,4 +92,6 @@ public class PrincipalPageController
     itemsTable.getColumns().add(colBtn);
 
   }
+
+
 }
