@@ -33,7 +33,6 @@ public class ViewHandler
 
   public void openLogInView()
   {
-    if(logInScene == null)
     {
       try
       {

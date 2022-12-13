@@ -34,13 +34,13 @@ public class DatabaseMethods implements Database
     connect().close();
   }
 
-  @Override public void addItem(String title, String price, String desc) throws SQLException
+  @Override public void addItem(String title, String price, String desc,
+      String user, String subcategory, String url) throws SQLException
   {
     connect();
     Statement stmt= statement();
-
-    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category_id)"
-        + "VALUES ('"+title+"','"+price+"','"+desc+"','0','false','0')");
+    stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category, url)"
+        + "VALUES ('"+title+"','"+price+"','"+desc+"','"+getUserId(user)+"','false','"+subcategory+"'"+url+"')");
     connect().close();
   }
 
@@ -76,9 +76,11 @@ public class DatabaseMethods implements Database
     ObservableList<Item> list = FXCollections.observableArrayList();
     Statement statement=statement();
     ResultSet resultSet=statement.executeQuery("select * from sepproject2.items");
+
     while (resultSet.next()){
-      list.add(new Item(resultSet.getString("url"),(resultSet.getString("user_id")),(resultSet.getString("price")),(resultSet.getString("title")),(resultSet.getString("description")),
-          (resultSet.getString("sub_category_id"))));
+      int id= Integer.parseInt(resultSet.getString("user_id"));
+      list.add(new Item(resultSet.getString("url"),(getUserById(id)),(resultSet.getString("price")),(resultSet.getString("title")),(resultSet.getString("description")),
+          (resultSet.getString("sub_category"))));
     }
     return list;
   }
@@ -94,7 +96,34 @@ public class DatabaseMethods implements Database
     while (resultSet.next()){
       passwordDatabase=resultSet.getString("pasword");
     }
+    connect().close();
+    statement.close();
     return password.equals(passwordDatabase);
   }
+
+  @Override public int getUserId(String user2) throws SQLException
+  {
+    connect();
+    Statement statement=statement();
+    int user_id=0;
+    ResultSet resultSet=statement.executeQuery("SELECT user_id FROM sepproject2.userr Where username='"+user2+"'");
+    while (resultSet.next()){
+      user_id= Integer.parseInt(resultSet.getString("user_id"));
+    }
+    return user_id;
+  }
+
+  @Override public String getUserById(int id) throws SQLException
+  {
+    connect();
+    Statement statement=statement();
+    String username=null;
+    ResultSet resultSet=statement.executeQuery("SELECT username FROM sepproject2.userr Where user_id='"+id+"'");
+    while (resultSet.next()){
+      username= resultSet.getString("username");
+    }
+    return username;
+  }
+
 
 }

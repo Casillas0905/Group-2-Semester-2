@@ -44,11 +44,10 @@ public class PrincipalPageController
 
     addButtonToTable();
 
+    pictureColumn.setCellValueFactory(new PropertyValueFactory<>("picture"));
     userColumn.setCellValueFactory(new PropertyValueFactory<>("user"));
     titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-
   }
 
   @FXML
