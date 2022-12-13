@@ -35,7 +35,9 @@ public class ManagerImpl implements Manager
     {
       if (!(database.getUsersRegistered().contains(user.getUsername().toLowerCase())))
       {
-        database.registerUserr(user.getEmail().toLowerCase(), user.getPassword(), user.getUsername().toLowerCase(), user.getFname(), user.getLname(), user.getBirth());
+        database.registerUser(user.getFname(), user.getLname(),
+            user.getUsername(), user.getPassword(), user.getEmail(),
+            user.getBirth());
         System.out.println("user registered");
       }
     }

@@ -12,7 +12,7 @@ public class DatabaseMethods implements Database
   public Connection connect() throws SQLException
   {
 
-    return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","Iker0905");
+    return DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","Santiago32411");
 
   }
 
@@ -23,7 +23,7 @@ public class DatabaseMethods implements Database
     return connect().createStatement();
   }
 
-  @Override public void registerUserr(String email,String password,String username,String fname,String lname,String birth)
+  @Override public void registerUser(String fname,String lname,String username,String password,String email,String birth)
       throws SQLException
   {
     connect();
@@ -40,7 +40,7 @@ public class DatabaseMethods implements Database
     connect();
     Statement stmt= statement();
     stmt.execute("INSERT INTO sepproject2.items (title, price, description, user_id, is_sold, sub_category, url)"
-        + "VALUES ('"+title+"','"+price+"','"+desc+"','"+getUserId(user)+"','false','"+subcategory+"'"+url+"')");
+        + "VALUES ('"+title+"','"+price+"','"+desc+"','"+getUserId(user)+"','false','"+subcategory+"','"+url+"')");
     connect().close();
   }
 

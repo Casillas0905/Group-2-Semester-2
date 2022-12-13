@@ -1,12 +1,8 @@
 package Client.View.Register;
 
-
 import Client.Model.Model;
-import Database.Database;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import Database.DatabaseMethods;
-import javafx.beans.value.ObservableValue;
 
 import java.sql.SQLException;
 
@@ -15,7 +11,6 @@ public class RegisterViewModel
 
   private Model model;
   private StringProperty firstName,LastName, Username, password, mail,birth,error;
-  private Database database= new DatabaseMethods();
 
 
   public RegisterViewModel(Model model)

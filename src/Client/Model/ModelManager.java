@@ -42,13 +42,13 @@ public class ModelManager implements Model
     client.setUser(user);
   }
 
-  @Override public void registerUser(String email,String password,String username,String fname,String lname,String birth)
+  @Override public void registerUser(String fname,String lname,String username,String password,String email,String birth)
       throws SQLException
   {
     System.out.println("Model Manager");
     client.Register(new User(username, email, password, fname, lname, birth));
     if(isUserOrEmailFree(email,username)){
-      database.registerUserr(email.toLowerCase(), password, username.toLowerCase(), fname,lname, birth);
+      database.registerUser(fname, lname, username, password, email.toLowerCase(), birth);
       System.out.println("user registered model manager");
     }
   }

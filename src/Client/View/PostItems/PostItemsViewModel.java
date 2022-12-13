@@ -1,8 +1,6 @@
 package Client.View.PostItems;
 
 import Client.Model.Model;
-import Database.Database;
-import Database.DatabaseMethods;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -11,7 +9,6 @@ import java.sql.SQLException;
 public class PostItemsViewModel
 {
   private Model model;
-  private Database database= new DatabaseMethods();
   private StringProperty title, description, subCategory, price, picture, error;
 
 
