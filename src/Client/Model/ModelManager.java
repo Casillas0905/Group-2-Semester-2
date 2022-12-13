@@ -30,9 +30,10 @@ public class ModelManager implements Model
   }
 
   @Override public void uploadItem(String picture, String price, String title, String desc,
-      String subCategory)
+      String subCategory) throws SQLException
   {
     client.uploadItem(new Item(picture, user, price, title, desc, subCategory));
+    database.addItem(title, price, desc,user,subCategory,picture);
   }
 
   @Override public void setUser(String user)

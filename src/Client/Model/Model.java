@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 public interface Model extends PropertyChangeSubject
 {
-  void uploadItem(String picture, String price, String title, String desc, String subCategory);
+  void uploadItem(String picture, String price, String title, String desc, String subCategory)
+      throws SQLException;
   void setUser(String user);
   void registerUser(String email,String password,String username,String fname,String lname,String birth)
       throws SQLException;

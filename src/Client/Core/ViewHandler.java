@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ViewHandler
 {
@@ -32,7 +33,6 @@ public class ViewHandler
 
   public void openLogInView()
   {
-    if(logInScene == null)
     {
       try
       {
@@ -60,7 +60,8 @@ public class ViewHandler
     return root;
   }
 
-  private Parent loadFXMLPrincipalPage(String path) throws IOException
+  private Parent loadFXMLPrincipalPage(String path)
+      throws IOException, SQLException
   {
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource(path));
@@ -119,7 +120,7 @@ public class ViewHandler
         stage.setTitle("Principal Page");
         mainPageScene = new Scene(root);
       }
-      catch (IOException e)
+      catch (IOException | SQLException e)
       {
         e.printStackTrace();
       }

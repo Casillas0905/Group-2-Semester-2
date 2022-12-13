@@ -43,7 +43,6 @@ public class RegisterController
     password.textProperty().bindBidirectional(registerViewModel.passwordProperty());
     mail.textProperty().bindBidirectional(registerViewModel.mailProperty());
     birthday.textProperty().bindBidirectional(registerViewModel.birthProperty());
-
     errorLabel.textProperty().bind(registerViewModel.errorProperty());
   }
 
@@ -54,8 +53,7 @@ public class RegisterController
     }
     else {registerViewModel.registerUser();
     registerViewModel.clear();
-    viewHandler.openPrincipalPageView();}
-
+    viewHandler.openLogInView();}
   }
 
   public void BackToLogin(ActionEvent actionEvent)
