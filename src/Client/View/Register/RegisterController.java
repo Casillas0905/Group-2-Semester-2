@@ -43,7 +43,6 @@ public class RegisterController
     password.textProperty().bindBidirectional(registerViewModel.passwordProperty());
     mail.textProperty().bindBidirectional(registerViewModel.mailProperty());
     birthday.textProperty().bindBidirectional(registerViewModel.birthProperty());
-    birthday.
     errorLabel.textProperty().bind(registerViewModel.errorProperty());
   }
 

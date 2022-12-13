@@ -22,7 +22,7 @@
       <TextField fx:id="mail" layoutX="98.0" layoutY="290.0" />
       <Button layoutX="146.0" layoutY="421.0" mnemonicParsing="false" onAction="#Register" text="Register" />
       <Button layoutX="155.0" layoutY="468.0" mnemonicParsing="false" onAction="#BackToLogin" text="Back" />
-      <TextField fx:id="birthday" layoutX="101.0" layoutY="338.0" />
+      <TextField fx:id="birthday" layoutX="101.0" layoutY="338.0" promptText="YYYY-MM-DD" />
       <Label fx:id="errorLabel" layoutX="73.0" layoutY="382.0" prefHeight="17.0" prefWidth="205.0" text="Label" textFill="RED" />
    </children>
 </Pane>
