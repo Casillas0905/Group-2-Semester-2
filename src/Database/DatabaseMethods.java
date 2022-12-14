@@ -92,7 +92,7 @@ public class DatabaseMethods implements Database
     Statement statement=statement();
     String passwordDatabase=null;
     ResultSet resultSet=statement.executeQuery("SELECT pasword,username\n"
-        + "FROM sepproject2.userr\n" + "WHERE username='"+username.toLowerCase()+"';");
+        + "FROM sepproject2.userr\n" + "WHERE username='"+username+"';");
     while (resultSet.next()){
       passwordDatabase=resultSet.getString("pasword");
     }

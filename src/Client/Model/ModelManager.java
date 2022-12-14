@@ -46,10 +46,8 @@ public class ModelManager implements Model
       throws SQLException
   {
     System.out.println("Model Manager");
-    client.Register(new User(username, email, password, fname, lname, birth));
     if(isUserOrEmailFree(email,username)){
-      database.registerUser(fname, lname, username, password, email.toLowerCase(), birth);
-      System.out.println("user registered model manager");
+      client.Register(new User(username, email, password, fname, lname, birth));
     }
   }
 
