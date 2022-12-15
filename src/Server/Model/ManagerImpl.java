@@ -21,9 +21,10 @@ public class ManagerImpl implements Manager
 
   public ManagerImpl(){}
 
-  @Override public Item uploadItem(Item item)
+  @Override public Item uploadItem(Item item) throws SQLException
   {
     itemList.add(item);
+    database.addItem(item.getTitle(),item.getPrice(),item.getDescription(), item.getUser(), item.getSubCategory(), item.getPicture());
     support.firePropertyChange("itemPosted", null, item);
     return item;
   }

@@ -36,7 +36,7 @@ public class RMIClient implements Client, ClientCallBack, Serializable
     }
   }
 
-  @Override public Item uploadItem(Item item)
+  @Override public Item uploadItem(Item item) throws SQLException
   {
     Item item1 = null;
     try

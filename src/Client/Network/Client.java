@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public interface Client extends PropertyChangeSubject
 {
-  Item uploadItem(Item item);
+  Item uploadItem(Item item) throws SQLException;
   String setUser(String user);
   void startClient();
   User Register(User user) throws SQLException;

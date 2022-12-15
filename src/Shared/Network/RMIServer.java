@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public interface RMIServer extends Remote
 {
-  Item uploadItem(Item item) throws RemoteException;
+  Item uploadItem(Item item) throws RemoteException, SQLException;
   User registerUser(User user) throws SQLException, RemoteException;
   boolean LogIn(String username, String password) throws SQLException,
       RemoteException;

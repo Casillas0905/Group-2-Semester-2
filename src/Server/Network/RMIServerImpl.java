@@ -23,7 +23,8 @@ public class RMIServerImpl implements RMIServer
     UnicastRemoteObject.exportObject(this, 0);
   }
 
-  @Override public Item uploadItem(Item item) throws RemoteException
+  @Override public Item uploadItem(Item item)
+      throws RemoteException, SQLException
   {
     return manager.uploadItem(item);
   }
